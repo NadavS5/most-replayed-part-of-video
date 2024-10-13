@@ -33,6 +33,23 @@ def preProcessData(data):
 def plotCurve(points, videoLength):
     x = [((p[0] - 1) * (videoLength) / (1000 - 1)) for p in points]
     y = [-p[1] for p in points]
+
+    
+    max_y = max(y)
+    highest_peak_x = x[y.index(max_y)]
+    # print(max_y)
+
+    # print(f"y len = {len(y)} x len {len(x)}")
+
+    # highest_peak_x = points.index(max_y)
+
+
+    plt.scatter([highest_peak_x], [max_y], color='red', label=f'Highest Point ({highest_peak_x}, {max_y})')
+
+    # Annotate the highest point
+    plt.text(highest_peak_x, max_y, f'({highest_peak_x}, {max_y})', fontsize=12, verticalalignment='bottom')
+
+
     plt.plot(x, y)
     plt.show()
 

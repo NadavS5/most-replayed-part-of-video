@@ -1,3 +1,7 @@
+#non needed files
+most_replayd.py
+package-lock.json
+
 # Logs
 logs
 *.log
